@@ -1,16 +1,74 @@
-## Hi there 👋
+# 金宇华
 
-<!--
-**Amadeus-J-Christina/Amadeus-J-Christina** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+软件工程本科 | Python、Git、Shell | 代码仓库评估与数据采集
 
-Here are some ideas to get you started:
+[github.com/Amadeus-J-Christina](https://github.com/Amadeus-J-Christina)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+我关注代码仓库的可读性、可运行性和可复现性，主要使用 Python 与 Git 完成仓库信息采集、版本定位、依赖解析和质量初筛。做过 GitHub 仓库筛选、仓库快照整理和提交历史分析，习惯把判断标准落实为可重复执行的脚本和检查清单。
+
+## 技术能力
+
+| 方向 | 能力与工具 |
+| --- | --- |
+| 版本控制 | Git 分支管理、rebase、tag、submodule；阅读 commit、diff、blame |
+| 仓库协作 | GitHub / Gitee 的 Fork、Pull Request、Issue、Code Review |
+| 编程与脚本 | Python、Shell；能够阅读和修改 Go、TypeScript 代码 |
+| Python 工具链 | GitPython、argparse、Jinja2、matplotlib、networkx |
+| 仓库评估 | 活跃度分析、目录结构检查、模块边界判断、文档完备度检查 |
+| 仓库采集 | 固定 commit、导出目录树、整理依赖清单、生成构建说明 |
+
+## 代表项目
+
+### 仓库快照整理工具
+
+面向代码仓库采集和复现需求，将原本需要手工完成的版本定位、目录树导出、依赖整理和说明文档生成整合为一条命令。
+
+- 使用 GitPython 读取本地或远程仓库，支持按 commit hash 或 tag 定位版本。
+- 递归遍历工作区并生成目录树，通过 `.gitignore` 过滤和缓存降低大仓库的扫描开销。
+- 解析 `requirements.txt`、`go.mod`、`package.json`，通过统一 parser 接口扩展不同依赖格式。
+- 使用 Jinja2 生成 Markdown 快照说明，记录源码版本、目录结构、构建方式和依赖清单。
+- 从活跃度、结构、文档和任务边界四个维度输出 0-100 分，用于仓库初筛。
+- 在实际筛选和整理工作中累计处理 100 多个仓库，将单个仓库约半小时的手工流程压缩为一次命令执行。
+
+状态：正在整理可公开、可复现的脱敏版本。公开前不会上传客户数据、私有仓库地址或内部筛选规则。
+
+### Git 仓库分析脚本
+
+软件工程课程小组项目，我负责 commit 历史解析和分支结构可视化。
+
+- 使用 GitPython 遍历 commit，统计每周提交频率、贡献者分布和文件修改热点。
+- 使用 networkx 构建 commit 与 parent 关系图，并通过 matplotlib 输出提交时间线和分支合并图。
+- 通过识别 parent 数量过滤 merge commit，避免合并节点导致重复统计。
+- 将大仓库的全量遍历改为分页读取，降低内存占用。
+- 项目中的活跃度、文件热点和分支结构分析方法，后续用于仓库质量初筛。
+
+状态：课程版本已完成，正在整理示例数据与使用文档。
+
+## 仓库质量检查方法
+
+我通常从以下维度判断一个仓库是否适合采集、复现或进一步分析：
+
+1. **版本可定位**：存在明确的 commit、tag 或 release，能够锁定分析对象。
+2. **功能可识别**：目录结构和模块边界清楚，选定的 Git 树能够覆盖一个完整功能。
+3. **依赖可还原**：依赖文件、构建说明和运行入口齐全，环境要求可以被复述和验证。
+4. **文档可使用**：README、docs、示例或测试能够说明项目用途和基本使用方式。
+5. **历史可追溯**：提交记录连续、改动内容合理，commit 信息与代码变化能够相互印证。
+6. **结果可核验**：关键输出能够通过脚本、测试、日志或人工复查独立确认。
+
+## 经历
+
+2024 年 3 月至 8 月参与代码采集与数据标注项目，使用 Python、Git 和 Shell 完成仓库筛选、信息提取、质量检查和快照整理。工作内容包括提取 commit 历史、分支、tag 和依赖文件，检查模块划分、代码可运行性与文档完整性，并参与整理采集标准文档。
+
+2025 年 6 月毕业于杭州电子科技大学软件工程专业。主修软件工程、数据结构、操作系统、数据库原理和计算机网络。
+
+## 近期计划
+
+- [ ] 整理仓库快照工具的最小可运行版本，并补充脱敏示例仓库。
+- [ ] 为依赖解析器增加单元测试和异常格式测试。
+- [ ] 增加 JSON / CSV 结果导出及字段说明。
+- [ ] 补充从安装、运行到结果核验的完整复现文档。
+- [ ] 配置 lint、测试和基础 CI，确保每次提交都可验证。
+
+## 协作偏好
+
+我适合需要耐心和准确性的代码仓库评估、数据采集及质量检查工作。提交问题时会附复现步骤，修改代码时会控制变更范围，并在合并前核对实现、文档与实际输出是否一致。
